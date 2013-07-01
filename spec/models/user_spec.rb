@@ -48,22 +48,4 @@ describe User do
       user.full_name.should eq 'John Doe'
     end
   end
-
-  # describe '::page' do
-    
-  #   it 'returns the 3rd page of users, sorted by karma' do
-  #     user_one = double("User")
-  #     user_one.stub(:total_karma_points).and_return(200)
-  #     user_two = double("User")
-  #     user_two.stub(:total_karma_points).and_return(100)
-      
-  #   end
-  # end
 end
-
-      # stub 2 bogus users
-      # order them by karma
-      # ask for page 2 where each page is 1 users (# of users per page is 
-      #  argument somewhere?)
-      # ensure that stub 
-
