@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   end
 
   def self.page(page_number)
-    User.limit(10).offset(10 * (page_number -1) )
+    User.limit(100).offset(100 * (page_number -1) )
   end
 
 end

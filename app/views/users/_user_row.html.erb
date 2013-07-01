@@ -1,6 +1,8 @@
 <tr>
-  <td><i class="icon-star"></i> <%= number_with_delimiter(user.total_karma) %></td>
-  <td><%= user.full_name %></td>
-  <td><%= user.username %></td>
-  <td><%= mail_to user.email, user.email %></td>
+  <% cache "#{user.id}", expires_in: 5.minutes do %>
+    <td><i class="icon-star"></i> <%= number_with_delimiter(user.total_karma) %></td>
+    <td><%= user.full_name %></td>
+    <td><%= user.username %></td>
+    <td><%= mail_to user.email, user.email %></td>
+  <% end %>
 </tr>
