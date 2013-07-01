@@ -7,8 +7,9 @@ class KarmaPoint < ActiveRecord::Base
   validates :label, :presence => true
 
   after_save :update_user_karma
+  
 
   def update_user_karma
-    self.user.increment_counter(:karma_points_count, 1)
+    self.user.karma_points_count += self.value
   end
 end
