@@ -28,6 +28,3 @@ FactoryGirl.define do
     label { Faker::Lorem.word }
   end
 end
-
-
-#user_med   = create(:user_with_karma, :total => 500, :points => 2)

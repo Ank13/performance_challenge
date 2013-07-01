@@ -23,11 +23,8 @@ describe User do
   describe '.by_karma' do
     it 'returns users in order of highest-to-lowest karma' do
       user_med   = create(:user_with_karma, :total => 500, :points => 2)
-      user_med.update_attribute(:karma_points_count, 500)      
       user_low   = create(:user_with_karma, :total => 200, :points => 2)
-      user_low.update_attribute(:karma_points_count, 200)      
       user_high  = create(:user_with_karma, :total => 800, :points => 2)
-      user_high.update_attribute(:karma_points_count, 800)      
 
       User.by_karma.should eq [user_high, user_med, user_low]
     end
@@ -51,4 +48,22 @@ describe User do
       user.full_name.should eq 'John Doe'
     end
   end
+
+  # describe '::page' do
+    
+  #   it 'returns the 3rd page of users, sorted by karma' do
+  #     user_one = double("User")
+  #     user_one.stub(:total_karma_points).and_return(200)
+  #     user_two = double("User")
+  #     user_two.stub(:total_karma_points).and_return(100)
+      
+  #   end
+  # end
 end
+
+      # stub 2 bogus users
+      # order them by karma
+      # ask for page 2 where each page is 1 users (# of users per page is 
+      #  argument somewhere?)
+      # ensure that stub 
+

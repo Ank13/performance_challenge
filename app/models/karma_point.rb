@@ -10,6 +10,7 @@ class KarmaPoint < ActiveRecord::Base
   
 
   def update_user_karma
-    self.user.karma_points_count += self.value
+    user.karma_points_count += value
+    user.save
   end
 end
